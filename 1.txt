@@ -1,0 +1,71 @@
+#vector min and max
+c= c(5,10,15,20,25,30)
+print(max(c))
+print(min(c))
+
+#factorial
+n = readline(prompt = "enter the number")
+print(paste("value is" ,n))
+n = as.integer((n))
+class(n)
+
+factorial = 1
+if(n<0){
+  print("factorial does not exists , enter a non neg number")
+}else if(n==0){
+  print("fac is 1")
+}else{
+  fac = 1
+  for(i in 1:n){
+    fac = i * fac
+  }
+}
+print(fac)
+
+#fibonaci
+m = readline(prompt = "enter the number ")
+print(paste("value is" ,m))
+m = as.integer((m))
+class(m)
+
+a=0
+b=1
+
+if(m<=0){
+  print("enter a positive number greater than 0")
+}else{
+  for(i in 1:m){
+    k= a+b
+    print(k)
+    b=k
+    a=b
+  }
+}
+
+#simple calculator
+
+a = as.numeric(readline("write first number: "))
+b = as.numeric(readline("write second number: "))
+k = as.numeric(readline("1 to + \n2 to - \n3 to / \n4 to *: "))
+
+result = switch(k,
+                 a + b,
+                 a - b,
+                 a / b,
+                 a * b,
+                 "operation not known to calculator"
+)
+
+print(result)
+
+
+
+#pie hist and barplot 
+p = c(7, 25, 16, 12, 10, 30)
+pie_l = paste(round(100 * p/sum(p), 2), "%")
+barplot(p)
+hist(p , labels = pie_l)
+pie(p,labels = pie_l)
+
+
+

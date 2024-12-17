@@ -1,0 +1,59 @@
+#1
+x=c(0,1,2,3,4)
+px=c(0.41,0.37,0.16,0.05,0.01)
+sum = sum(x*px)
+weight = weighted.mean(x*px)
+print(weight)
+print(sum)
+
+#2
+expected_val = function(t){ 
+  k = t*0.1*exp(-0.1*t)
+  k 
+}
+k = integrate(expected_val,0,Inf)
+print(k$value)
+
+#3
+p=c(0,1,2,3)
+x=c(0.1,0.2,0.2,0.5)
+X = sum(p*x)
+k = 10*X-12
+k
+
+#4
+fx1 = function(x){
+  l = x*0.5 * exp(-abs(x))
+  l
+}
+ex1 = integrate(fx1,1,10)
+
+#mean
+ex1 = ex1$value
+fx2 = function(x){
+  l = x^2*0.5 * exp(-abs(x))
+  l
+}
+ex2 = integrate(fx2,1,10)
+ex2 = ex2$value
+
+ex1
+ex2
+variance = ex2-ex1^2
+print(variance)
+
+#5
+pd = function(x){
+  (3/4)*((1/4)^(x-1))
+}
+x = c(1,2,3,4,5)
+y = x^2
+pr = pd(y)
+plot(x,pr,type='h')
+v1 = sum(y*pr)
+v1
+v2 = sum(y^2*pr)
+var = v2 - v1^2
+var
+k = pd(3)
+k

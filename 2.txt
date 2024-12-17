@@ -1,0 +1,55 @@
+#2nd
+k = c(rep('gold',20),rep('silver',30),rep('bronze',50))
+sample = sample(k,10,replace=TRUE)
+print(sample)
+
+k = c('sucess','fail')
+sample = sample(k,10,replace=TRUE,prob=c(0.9,01))
+print(sample)
+
+dates = c(1:365)
+dates
+dats = function (n){ 
+  k = replicate(10000,{
+    sample = sample(dates,n,replace=TRUE)
+    match = any(duplicated(sample))
+  })
+  mean(k)
+}
+x = c(10,20,30,40,50)
+y = sapply(x,dats)
+data.frame(x,y)
+
+while(TRUE){
+  p = dats(n)
+  if(p>0.5){
+    print(n)
+    break
+  }
+  n = n+1
+}
+n
+
+
+cond = function(prob_a , prob_b , prob_a_b){
+  prob_b_a = (prob_b * prob_a_b)/prob_a
+  prob_b_a
+}
+cond(0.4 , 0.2 , 0.85)
+
+data = iris
+data[1:5,]
+structure(data)
+sl = data['Sepal.Length']
+max = max(sl)
+min = min(sl)
+max - min
+
+l = data[['Sepal.Length']]
+mean(l)
+median(l)
+k = quantile(l,c(0.25,0.75))
+k[[2]]-k[[1]]
+sd(l)
+summary(data)
+

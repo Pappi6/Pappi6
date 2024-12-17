@@ -1,0 +1,41 @@
+#1
+dices = 12
+prob = pbinom(6,size=dices,prob=1/6)
+print(prob)
+
+#2
+mean=72
+std = 15.2
+score =84
+z = (score-mean)/std
+prob = pnorm(z)
+prob= 1 - prob
+prob*100
+
+#3
+lamda = 5
+p0 = dpois(0,lambda=5)
+p0
+lambda = 5*10
+p1 = dpois(48,lambda=lambda)
+p2 = dpois(49,lambda=lambda)
+p3 = dpois(50,lambda=lambda)
+prob = p1 + p2 + p3 
+print(prob)
+
+#4
+pop = 250 
+def = 17 
+sampl = 5
+x = 3
+prob = dhyper(x,def,pop-def,sampl)
+prob
+
+#5
+size = 31
+k=1:31
+pmf = dbinom(k,size,prob=0.447)
+plot(k,pmf,type='h')
+
+cdf = pbinom(k,size,prob=0.477)
+plot(k,cdf,type='s')
